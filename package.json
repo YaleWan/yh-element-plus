@@ -41,6 +41,13 @@
     "gen:version": "node build/gen-version.js",
     "prepare": "husky install"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push-todo-open": "npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {
     "element-ui": "2.12.0",
     "vue": "^2.6.14",
