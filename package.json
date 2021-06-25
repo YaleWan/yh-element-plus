@@ -28,12 +28,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -53,6 +47,7 @@
     "vue-router": "^3.5.2"
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint --cache --fix"
+    "*.{js,vue}": "eslint --cache --fix",
+    "*.js": "eslint --cache --fix"
   }
 }
