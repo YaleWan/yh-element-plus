@@ -1,0 +1,12 @@
+{
+  "name": "@c3-element-plus/input",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/test-utils": "^2.0.0-beta.3"
+  },
+  "dependencies": {
+    "@c3-element-plus/hooks": "^0.0.0"
+  }
+}

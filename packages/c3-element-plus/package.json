@@ -1,0 +1,18 @@
+{
+  "name": "c3-element-plus",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "yhwang",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "dependencies": {
+    "@c3-element-plus/hooks": "^0.0.0",
+    "@c3-element-plus/checkbox": "^0.0.0",
+    "@c3-element-plus/datepicker": "^0.0.0",
+    "@c3-element-plus/radio": "^0.0.0",
+    "@c3-element-plus/select": "^0.0.0",
+    "@c3-element-plus/tag": "^0.0.0",
+    "@c3-element-plus/input": "^0.0.0",
+    "@c3-element-plus/form": "^0.0.0"
+  }
+}

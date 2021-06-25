@@ -1,0 +1,17 @@
+<template>
+  <el-input
+    v-model="bindVal"
+    v-bind="attrsAll"
+    v-on="on"
+  >
+  </el-input>
+</template>
+<script>
+import { useAttrs } from "@c3-element-plus/hooks";
+export default {
+  name: "CInput",
+  mixins: [useAttrs],
+  props: {},
+};
+</script>
+<style scoped></style>

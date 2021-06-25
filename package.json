@@ -1,0 +1,35 @@
+{
+  "name": "c3-element-plus",
+  "private": true,
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
+    "@vue/compiler-sfc": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "lerna": "^3.22.1",
+    "less": "^4.1.1",
+    "less-loader": "7.3.0",
+    "ora": "^5.4.1",
+    "rollup": "^2.52.2",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "vue-dotmd-loader": "^0.2.2",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "gen": "bash ./script/gc.sh",
+    "build": "node ./build/bincomp.js",
+    "bootstrap": "yarn --frozen-lockfile && npx lerna bootstrap && yarn gen:version",
+    "gen:version": "node build/gen-version.js"
+  },
+  "dependencies": {
+    "element-ui": "2.12.0",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2"
+  }
+}
