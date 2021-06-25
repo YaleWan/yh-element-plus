@@ -1,12 +1,13 @@
 <template>
   <div>
-    <slot></slot>
+    123
+    <slot />
   </div>
 </template>
 <script>
 export default {
   name: 'CTag',
-  props: { },
+  props: { }
 }
 </script>
 <style scoped>
