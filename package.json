@@ -6,10 +6,15 @@
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
     "@vue/compiler-sfc": "^3.1.1",
+    "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
+    "eslint": "^7.29.0",
+    "eslint-plugin-vue": "^7.12.0",
+    "husky": ">=6",
     "lerna": "^3.22.1",
     "less": "^4.1.1",
     "less-loader": "7.3.0",
+    "lint-staged": ">=10",
     "ora": "^5.4.1",
     "rollup": "^2.52.2",
     "rollup-plugin-css-only": "^3.1.0",
@@ -25,11 +30,15 @@
     "gen": "bash ./script/gc.sh",
     "build": "node ./build/bincomp.js",
     "bootstrap": "yarn --frozen-lockfile && npx lerna bootstrap && yarn gen:version",
-    "gen:version": "node build/gen-version.js"
+    "gen:version": "node build/gen-version.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "element-ui": "2.12.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.2"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint --cache --fix"
   }
 }
