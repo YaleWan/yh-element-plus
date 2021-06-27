@@ -1,5 +1,5 @@
 <template>
-  <el-form :model="formModel" v-bind="formConfig">
+  <el-form v-bind="formConfig" ref="form" :model="formModel">
     <div class="common-form">
       <el-row class="common-form__row" v-bind="rowLayout">
         <template v-for="(col, colIndex) in formatedSchema">
@@ -76,6 +76,12 @@ export default {
     },
     getColLayout(col) {
       return { ...col.colGrid, ...this.colLayout }
+    },
+    resetFields(...args) {
+      return this.$refs.form.resetFields(...args)
+    },
+    validate(...args) {
+      return this.$refs.form.validate(...args)
     }
   }
 }

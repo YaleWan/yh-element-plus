@@ -9,15 +9,15 @@
       :key="`${option.label}_${idx}`"
       :label="option.value"
       :disabled="option.disabled"
-    >{{option.label}}</el-checkbox>
+    >{{ option.label }}</el-checkbox>
   </el-checkbox-group>
 </template>
 <script>
-import { useAttrs } from "@c3-element-plus/hooks";
+import { useAttrs } from '@c3-element-plus/hooks'
 export default {
   name: 'CCheckbox',
-  mixins:[useAttrs],
-  props: { },
+  mixins: [useAttrs],
+  props: { }
 }
 </script>
 <style scoped>

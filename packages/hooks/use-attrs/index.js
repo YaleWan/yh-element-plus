@@ -22,7 +22,7 @@ export default {
       }
     },
     attrsAll() {
-      return { ...this.attrs, ...this.dynamicAttrs }
+      return { ...this.$attrs, ...this.attrs, ...this.dynamicAttrs }
     }
   },
   methods: {

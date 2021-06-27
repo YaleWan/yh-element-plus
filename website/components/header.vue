@@ -1,15 +1,15 @@
 <template lang="html">
-    <div class="header-model">
-        车300Vue通用组件库
-        
-    </div>
+  <div class="header-model">
+    车300Vue通用组件库
+
+  </div>
 </template>
 <script>
 export default {
-    data() {
-        return {
-        }
-    },
+  data() {
+    return {
+    }
+  }
 }
 </script>
 <style scoped>

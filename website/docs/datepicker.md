@@ -8,6 +8,7 @@
 ````html demo:vue
 <template>
     
+    <c-datepicker v-model="value1" :attrs="attrs1" :on="on" />
     <c-datepicker v-model="value2" :attrs="attrs2" :on="on" />
 </template>
 <script>

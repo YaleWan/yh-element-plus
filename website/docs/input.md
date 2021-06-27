@@ -128,4 +128,3 @@
 | change | 仅在输入框失去焦点或用户按下回车时触发 | (value: string \| number) |
 | input | 在 Input 值改变时触发 | (value: string \| number) |
 | clear | 在点击由 `clearable` 属性生成的清空按钮时触发 | — |
-

@@ -60,82 +60,82 @@ export default {
   props: {
     data: {
       type: Array,
-      default: () => [],
+      default: () => []
     },
     base: {
       type: String,
-      default: "",
-    },
+      default: ''
+    }
   },
   data() {
     return {
       isSmallScreen: false,
-      isFade: false,
-    };
-  },
-  mounted() {
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.handleResize);
+      isFade: false
+    }
   },
 
   computed: {
     navStyle(value) {
-      let style = {};
+      const style = {}
       if (value) {
-        style.paddingBottom = "60px";
+        style.paddingBottom = '60px'
       }
-      style.opacity = this.isFade ? "0.5" : "1";
-      return style;
-    },
+      style.opacity = this.isFade ? '0.5' : '1'
+      return style
+    }
   },
   watch: {
-    "$route.path"() {
+    '$route.path'() {
       // 触发伪滚动条更新
-      this.handlePathChange();
-    },
+      this.handlePathChange()
+    }
+  },
+  mounted() {
+    this.handleResize()
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize)
   },
   methods: {
     handleResize() {
-      this.isSmallScreen = document.documentElement.clientWidth < 768;
-      this.handlePathChange();
+      this.isSmallScreen = document.documentElement.clientWidth < 768
+      this.handlePathChange()
     },
     handlePathChange() {
       if (!this.isSmallScreen) {
-        this.expandAllMenu();
-        return;
+        this.expandAllMenu()
+        return
       }
       this.$nextTick(() => {
-        hideAllMenu();
-        let activeAnchor = document.querySelector("a.active");
-        let ul = activeAnchor.parentNode;
-        while (ul.tagName !== "UL") {
-          ul = ul.parentNode;
+        this.hideAllMenu()
+        const activeAnchor = document.querySelector('a.active')
+        let ul = activeAnchor.parentNode
+        while (ul.tagName !== 'UL') {
+          ul = ul.parentNode
         }
-        ul.style.height = "auto";
-      });
+        ul.style.height = 'auto'
+      })
     },
     expandAllMenu() {
-      [].forEach.call(document.querySelectorAll(".pure-menu-list"), (ul) => {
-        ul.style.height = "auto";
-      });
+      [].forEach.call(document.querySelectorAll('.pure-menu-list'), (ul) => {
+        ul.style.height = 'auto'
+      })
     },
     expandMenu(event) {
-      if (!this.isSmallScreen) return;
-      let target = event.currentTarget;
-      if (!target.nextElementSibling || target.nextElementSibling.tagName !== "UL") return;
-      hideAllMenu();
-      event.currentTarget.nextElementSibling.style.height = "auto";
+      if (!this.isSmallScreen) return
+      const target = event.currentTarget
+      if (!target.nextElementSibling || target.nextElementSibling.tagName !== 'UL') return
+      this.hideAllMenu()
+      event.currentTarget.nextElementSibling.style.height = 'auto'
     },
     hideAllMenu() {
-      [].forEach.call(document.querySelectorAll(".pure-menu-list"), (ul) => {
-        ul.style.height = "0";
-      });
-    },
-  },
-};
+      [].forEach.call(document.querySelectorAll('.pure-menu-list'), (ul) => {
+        ul.style.height = '0'
+      })
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
 .side-nav {

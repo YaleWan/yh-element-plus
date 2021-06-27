@@ -14,24 +14,23 @@
   </div>
 </template>
 
-<style></style>
-
 <script>
-import HeaderModel from "./components/header";
-import SideNav from "./components/side-nav";
-import menus from "./route.config.json";
+import HeaderModel from './components/header'
+import SideNav from './components/side-nav'
+import menus from './route.config.json'
 export default {
   components: {
     HeaderModel,
-    SideNav,
+    SideNav
   },
   data() {
     return {
       menus: menus,
-      contanierHeight: 0,
-    };
-  },
-};
+      value1: ''
+
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
 .content{
