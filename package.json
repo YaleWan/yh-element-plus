@@ -1,5 +1,6 @@
 {
   "name": "c3-element-plus",
+  "version": "1.1.0",
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
@@ -22,6 +23,7 @@
     "rollup": "^2.52.2",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-vue": "^6.0.0",
+    "standard-version": "^9.3.0",
     "vue-dotmd-loader": "^0.2.2",
     "vue-template-compiler": "^2.6.14"
   },
@@ -39,7 +41,8 @@
     "build": "node ./build/bincomp.js",
     "bootstrap": "yarn --frozen-lockfile && npx lerna bootstrap && yarn gen:version",
     "gen:version": "node build/gen-version.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "standard-version"
   },
   "dependencies": {
     "element-ui": "2.12.0",
