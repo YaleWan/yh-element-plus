@@ -5,6 +5,17 @@
 > c-form 是将所有的表单进行了一个整合，并且加上了一些响应式的处理
 > 
 
+
++ `formModel` 
+存放的是所有双向绑定的值
++ `formConfig`
+form的配置
++ `formItemConfig`
+formItem的配置
++ `layout`
+布局配置
+
+
 ````html demo:vue
 <template>
       <c-form
@@ -12,11 +23,11 @@
         :form-config="formConfig"
         :options="optionsConfig"
         :form-item-config="formItemConfig"
-        :layout="layout"
         ref="form"
       >
       </c-form>
-      <el-button @click="submit">提交</el-button>
+      <el-button @click="submit" type="primary">提交</el-button>
+      <el-button @click="reset">重置</el-button>
 </template>
 <script>
   export default {
@@ -78,28 +89,13 @@
           }
         }
       ],
-      layout: {
-        rowLayout: {
-          gutter: 30,
-          justify: 'start'
-        },
-        colLayout: {
-          xs: 24,
-          sm: 12,
-          md: 12,
-          lg: 8,
-          xl: 8
-        }
-      },
-
       };
     },
     methods:{
-        handleChange(val){
-            console.log(val)
+        reset(){
+          this.$refs.form.resetFields()
         },
         submit(){
-          // this.$refs.form.resetFields()
           this.$refs.form.validate((valid) => {
           if (valid) {
             alert('submit!');

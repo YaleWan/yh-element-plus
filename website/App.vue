@@ -7,9 +7,9 @@
       <div class="page-component__nav">
         <side-nav :data="menus" />
       </div>
-      <el-main>
+      <div class="page-main">
         <router-view />
-      </el-main>
+      </div>
     </div>
   </div>
 </template>
@@ -47,8 +47,12 @@ export default {
   padding: 0 20px;
 }
 .page-component__nav {
-  width: 240px;
+  width: 200px;
   transition: padding-top 0.3s;
   overflow: scroll;
+}
+.page-main{
+  margin-top: 10px;
+  flex:1;
 }
 </style>
