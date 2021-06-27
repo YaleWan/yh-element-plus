@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/YaleWan/yh-element-plus/compare/v1.1.0...v1.1.1) (2021-06-27)
+
+
+### Bug Fixes
+
+* 修复bug ([74e10c9](https://github.com/YaleWan/yh-element-plus/commit/74e10c9e57d44ae80206ae3a39b78ebf627d38c5))
+
 ## 1.1.0 (2021-06-27)
 
 
