@@ -42,7 +42,7 @@
     "bootstrap": "yarn --frozen-lockfile && npx lerna bootstrap && yarn gen:version",
     "gen:version": "node build/gen-version.js",
     "prepare": "husky install",
-    "release": "standard-version"
+    "release": "bash ./script/release.sh"
   },
   "dependencies": {
     "element-ui": "2.12.0",
