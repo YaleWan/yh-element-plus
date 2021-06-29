@@ -1,8 +1,16 @@
-## [1.2.11](https://github.com/YaleWan/yh-element-plus/compare/v1.2.10...v1.2.11) (2021-06-29)
+## [1.3.1](https://github.com/YaleWan/yh-element-plus/compare/v1.3.0...v1.3.1) (2021-06-29)
 
-456
+
+
+# [1.3.0](https://github.com/YaleWan/yh-element-plus/compare/v1.2.10...v1.3.0) (2021-06-29)
+
+
 ### Features
 
+* 1 ([c224c85](https://github.com/YaleWan/yh-element-plus/commit/c224c85d6ed8285bfe0dce2cd48095050c2291f9))
+* 2 ([79f4687](https://github.com/YaleWan/yh-element-plus/commit/79f468797a9ada6519bed89a3731318e24a47663))
+* fenzhi ([33a7f86](https://github.com/YaleWan/yh-element-plus/commit/33a7f86020dfcda36155585c7b9a66537d1e75ff))
+* release ([4fe1348](https://github.com/YaleWan/yh-element-plus/commit/4fe134855433c99ce77cdc64e91e4bc7ff01d464))
 * 测试 ([825d59a](https://github.com/YaleWan/yh-element-plus/commit/825d59a604df138b73ef87c9965e39fbc42b0702))
 * 测试 ([0719f12](https://github.com/YaleWan/yh-element-plus/commit/0719f12a2d574f0756ebce5f28ea0243502a0426))
 

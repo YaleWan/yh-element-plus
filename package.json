@@ -50,7 +50,7 @@
     "prepare": "husky install",
     "release": "yarn clean:lib && bash ./script/release.sh",
     "clean:lib": "rimraf lib",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "element-ui": "2.12.0",
