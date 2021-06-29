@@ -7,8 +7,7 @@ const scopes = [
   'dev',
   'build',
   'deploy',
-  'other',
-  'release'
+  'other'
 ]
 
 module.exports = {
