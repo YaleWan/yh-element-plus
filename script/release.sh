@@ -38,10 +38,10 @@ then
   git push origin master
   git push origin refs/tags/v$VERSION
 
-  if [[ $VERSION =~ "beta" ]]
-  then
-    npm publish --tag beta
-  else
-    npm publish
-  fi
+  # if [[ $VERSION =~ "beta" ]]
+  # then
+  #   npm publish --tag beta
+  # else
+  #   npm publish
+  # fi
 fi
