@@ -10,16 +10,15 @@
       :label="option.label"
       :value="option.value"
       :disabled="option.disabled"
-    >
-    </el-option>
+    />
   </el-select>
 </template>
 <script>
-import { useAttrs } from "@c3-element-plus/hooks";
+import { useAttrs } from '@c3-element-plus/hooks'
 export default {
   name: 'CSelect',
-  mixins:[useAttrs],
-  props: { },
+  mixins: [useAttrs],
+  props: { }
 }
 </script>
 <style scoped>

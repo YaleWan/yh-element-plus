@@ -10,16 +10,16 @@
       :label="option.value"
       :disabled="option.disabled"
     >
-      {{option.label}}
+      {{ option.label }}
     </el-radio>
   </el-radio-group>
 </template>
 <script>
-import { useAttrs } from "@c3-element-plus/hooks";
+import { useAttrs } from '@c3-element-plus/hooks'
 export default {
   name: 'CRadio',
-  mixins:[useAttrs],
-  props: { },
+  mixins: [useAttrs],
+  props: { }
 }
 </script>
 <style scoped>

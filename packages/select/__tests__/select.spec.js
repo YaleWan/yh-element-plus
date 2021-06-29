@@ -7,8 +7,8 @@ describe('Select.vue', () => {
   test('render test', () => {
     const wrapper = mount(Select, {
       slots: {
-        default: AXIOM,
-      },
+        default: AXIOM
+      }
     })
     expect(wrapper.text()).toEqual(AXIOM)
   })

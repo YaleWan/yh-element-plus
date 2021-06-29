@@ -6,6 +6,8 @@ const css = require('rollup-plugin-css-only')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const vue = require('rollup-plugin-vue')
 const rollup = require('rollup')
+const {terser} = require('rollup-plugin-terser')
+
 
 const deps = Object.keys(pkg.dependencies)
 
@@ -28,6 +30,7 @@ const runBuild = async () => {
       plugins: [
         nodeResolve(),
         css(),
+        // terser(),
         vue({
           target: 'browser',
           css: false,
@@ -48,10 +51,11 @@ const runBuild = async () => {
       file: getOutFile(),
       paths(id) {
         if (/^@c3-element-plus/.test(id)) {
-          return id.replace('@c3-element-plus/', '../el-')
+          return id.replace('@c3-element-plus/', '../')
         }
       },
     }
+   console.log(name, 'done')
 
     const bundle = await rollup.rollup(inputOptions)
     await bundle.write(outOptions)
