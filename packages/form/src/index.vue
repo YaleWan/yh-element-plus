@@ -2,8 +2,8 @@
   <el-form v-bind="formConfig" ref="form" :model="formModel">
     <div class="c-form">
       <el-row class="c-form__row" v-bind="rowLayout">
-        <div v-for="(col, colIndex) in formatedSchema" :key="colIndex">
-          <el-col v-bind="getColLayout(col)">
+        <template v-for="(col, colIndex) in formatedSchema">
+          <el-col v-bind="getColLayout(col)" :key="colIndex">
             <slot v-if="col.slot" :name="col.slot" />
             <template v-else>
               <!-- 具体组件的配置项目 -->
@@ -17,7 +17,7 @@
               />
             </template>
           </el-col>
-        </div>
+        </template>
       </el-row>
     </div>
   </el-form>
@@ -31,10 +31,11 @@ export default {
     layout: {
       // 关于el-row 的拓展
       type: Object,
-      default: () => {
+      default: (value) => {
+        console.log(`value`, value)
         return {
           rowLayout: {
-            gutter: 30,
+            gutter: 0,
             justify: 'start'
           },
           colLayout: {

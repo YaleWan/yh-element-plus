@@ -1,12 +1,11 @@
 ## Form 表单
 
 
-### 常规使用
 > c-form 是将所有的表单进行了一个整合，并且加上了一些响应式的处理
-> 
+>
 
 
-+ `formModel` 
++ `formModel`
 存放的是所有双向绑定的值
 + `formConfig`
 form的配置
@@ -14,8 +13,9 @@ form的配置
 formItem的配置
 + `layout`
 布局配置
-
-
+### 校验
+> 所有表单的校验放在`formCofig`中`rules`配置中，实行三要素原则，即 `formModel`的数据、`formCofig`中`rules`配置和`formItemCofig`中prop一致
+>
 ````html demo:vue
 <template>
       <c-form
@@ -33,7 +33,7 @@ formItem的配置
   export default {
     data() {
       return {
-    formModel: {
+      formModel: {
         activeName:"",
         activeArea: "",
         activeTime: [],
@@ -66,7 +66,7 @@ formItem的配置
             clearable: true
           }
         },
-         {
+        {
           type: 'select',
           prop: 'activeArea',
           formItem: { label: '活动区域' },
