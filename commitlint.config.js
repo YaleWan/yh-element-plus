@@ -8,7 +8,7 @@ const scopes = [
   'build',
   'deploy',
   'other',
-  'input'
+  'release'
 ]
 
 module.exports = {
