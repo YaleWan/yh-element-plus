@@ -1,6 +1,19 @@
+const scopes = [
+  'project',
+  'core',
+  'style',
+  'docs',
+  'ci',
+  'dev',
+  'build',
+  'deploy',
+  'other'
+]
+
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
+    'scope-enum': [2, 'always', [...scopes]],
     'body-leading-blank': [1, 'always'],
     'footer-leading-blank': [1, 'always'],
     'header-max-length': [2, 'always', 72],
@@ -11,10 +24,7 @@ module.exports = {
       ['sentence-case', 'start-case', 'pascal-case', 'upper-case']
     ],
     'subject-empty': [0],
-    'subject-full-stop': [2, 'never', '.'],
-    'type-case': [0],
-    'type-empty': [0],
-    'type-enum': [0]
+    'subject-full-stop': [2, 'never', '.']
   }
 }
 

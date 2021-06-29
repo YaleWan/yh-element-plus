@@ -79,19 +79,17 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
-.schema-form-item{
-  .el-select{
-    width: 100%;
-  }
+<style lang="css" scoped>
   .el-date-editor{
     width: 100%;
   }
-  .el-cascader{
+  .el-date-editor .el-select{
+    width: 100%;
+  }
+  .el-date-editor .el-cascader{
     width: 100%;
   }
   .el-date-editor.el-input{
     width:100%;
   }
-}
 </style>
