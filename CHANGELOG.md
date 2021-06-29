@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/YaleWan/yh-element-plus/compare/v1.3.1...v1.4.0) (2021-06-29)
+
+
+### Features
+
+* 123 ([c25b15f](https://github.com/YaleWan/yh-element-plus/commit/c25b15f3626960a26667eac4e20b34111b2ed582))
+
+
+
 ## [1.3.1](https://github.com/YaleWan/yh-element-plus/compare/v1.3.0...v1.3.1) (2021-06-29)
 
 
