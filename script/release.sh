@@ -29,13 +29,13 @@ then
   # fi
   # cd ../..
 
-  # commit
-  git add -A
-  git commit -m "build: $VERSION"
+
   npm version $VERSION --message "release: $VERSION"
   # 生成changelog
   npm run changelog
-
+  # commit
+  git add -A
+  git commit -m "build: $VERSION"
   # publish
   git push origin master
   git push origin refs/tags/v$VERSION
