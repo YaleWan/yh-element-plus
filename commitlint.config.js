@@ -19,13 +19,16 @@ module.exports = {
     'footer-leading-blank': [1, 'always'],
     'header-max-length': [2, 'always', 72],
     'scope-case': [2, 'always', 'lower-case'],
-    'subject-case': [
+    'subject-case': [1, 'never', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']],
+    'subject-empty': [2, 'never'],
+    'subject-full-stop': [2, 'never', '.'],
+    'type-case': [2, 'always', 'lower-case'],
+    'type-empty': [2, 'never'],
+    'type-enum': [
       2,
-      'never',
-      ['sentence-case', 'start-case', 'pascal-case', 'upper-case']
-    ],
-    'subject-empty': [0],
-    'subject-full-stop': [2, 'never', '.']
+      'always',
+      ['build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test', 'improvement']
+    ]
   }
 }
 
