@@ -1,135 +1,134 @@
 <template>
-    <div
-        class="demo-block"
-        :class="[blockClass, { 'hover': hovering }]"
-        @mouseenter="hovering = true"
-        @mouseleave="hovering = false"
-    >
-        <div class="source">
-            <slot />
-        </div>
-        <div ref="meta" class="meta">
-            <div v-if="$slots.description" name="description" class="description" />
-            <div class="highlight">
-                <slot name="code" />
-            </div>
-        </div>
-        <div
-            ref="control"
-            class="demo-block-control"
-            @click="isExpanded = !isExpanded"
-        >
-            <transition name="arrow-slide">
-                <i :class="[iconClass, { 'hovering': hovering }]" />
-            </transition>
-            <transition name="text-slide">
-                <span v-show="hovering">{{ controlText }}</span>
-            </transition>
-            
-        </div>
+  <div
+    class="demo-block"
+    :class="[blockClass, { 'hover': hovering }]"
+    @mouseenter="hovering = true"
+    @mouseleave="hovering = false"
+  >
+    <div class="source">
+      <slot />
     </div>
-</template>
+    <div ref="meta" class="meta">
+      <div v-if="$slots.description" name="description" class="description" />
+      <div class="highlight">
+        <slot name="code" />
+      </div>
+    </div>
+    <div
+      ref="control"
+      class="demo-block-control"
+      @click="isExpanded = !isExpanded"
+    >
+      <transition name="arrow-slide">
+        <i :class="[iconClass, { 'hovering': hovering }]" />
+      </transition>
+      <transition name="text-slide">
+        <span v-show="hovering">{{ controlText }}</span>
+      </transition>
 
+    </div>
+  </div>
+</template>
 
 <script type="text/babel">
 export default {
 
-    props: {
-        jsfiddle: Object,
-        default() {
-            return {}
-        },
+  props: {
+    jsfiddle: Object,
+    default() {
+      return {}
+    }
+  },
+  data() {
+    return {
+      hovering: false,
+      isExpanded: false,
+      fixedControl: false,
+      scrollParent: null,
+      langConfig: {
+        'hide-text': '隐藏代码',
+        'show-text': '显示代码',
+        'button-text': '在线运行',
+        'tooltip-text': '前往 jsfiddle.net 运行此示例'
+      }
+    }
+  },
+
+  computed: {
+    lang() {
+      return this.$route.path.split('/')[1]
     },
-    data() {
-        return {
-            hovering: false,
-            isExpanded: false,
-            fixedControl: false,
-            scrollParent: null,
-            langConfig: {
-                'hide-text': '隐藏代码',
-                'show-text': '显示代码',
-                'button-text': '在线运行',
-                'tooltip-text': '前往 jsfiddle.net 运行此示例',
-            },
-        }
+
+    blockClass() {
+      return `demo-${this.lang} demo-${this.$router.currentRoute.path.split('/').pop()}`
     },
 
-    computed: {
-        lang() {
-            return this.$route.path.split('/')[1]
-        },
+    iconClass() {
+      return this.isExpanded ? 'el-icon-caret-top' : 'el-icon-caret-bottom'
+    },
 
-        blockClass() {
-            return `demo-${this.lang} demo-${this.$router.currentRoute.path.split('/').pop()}`
-        },
+    controlText() {
+      return this.isExpanded ? this.langConfig['hide-text'] : this.langConfig['show-text']
+    },
 
-        iconClass() {
-            return this.isExpanded ? 'el-icon-caret-top' : 'el-icon-caret-bottom'
-        },
+    codeArea() {
+      return this.$el.getElementsByClassName('meta')[0]
+    },
 
-        controlText() {
-            return this.isExpanded ? this.langConfig['hide-text'] : this.langConfig['show-text']
-        },
-
-        codeArea() {
-            return this.$el.getElementsByClassName('meta')[0]
-        },
-
-        codeAreaHeight() {
-            if (this.$el.getElementsByClassName('description').length > 0) {
-                return this.$el.getElementsByClassName('description')[0].clientHeight +
+    codeAreaHeight() {
+      if (this.$el.getElementsByClassName('description').length > 0) {
+        return this.$el.getElementsByClassName('description')[0].clientHeight +
             this.$el.getElementsByClassName('highlight')[0].clientHeight + 20
-            }
-            return this.$el.getElementsByClassName('highlight')[0].clientHeight
-        },
-    },
+      }
+      return this.$el.getElementsByClassName('highlight')[0].clientHeight
+    }
+  },
 
-    watch: {
-        isExpanded(val) {
-            this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0'
-            if (!val) {
-                this.fixedControl = false
-                this.$refs.control.style.left = '0'
-                this.removeScrollHandler()
-                return
-            }
-            setTimeout(() => {
-                this.scrollParent = document.querySelector('.page-component__scroll > .el-scrollbar__wrap')
-                this.scrollParent && this.scrollParent.addEventListener('scroll', this.scrollHandler)
-                this.scrollHandler()
-            }, 200)
-        },
-    },
-
-    mounted() {
-        this.$nextTick(() => {
-            const highlight = this.$el.getElementsByClassName('highlight')[0]
-            if (this.$el.getElementsByClassName('description').length === 0) {
-                highlight.style.width = '100%'
-                highlight.borderRight = 'none'
-            }
-        })
-    },
-
-    beforeDestroy() {
+  watch: {
+    isExpanded(val) {
+      this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0'
+      if (!val) {
+        this.fixedControl = false
+        this.$refs.control.style.left = '0'
         this.removeScrollHandler()
-    },
+        return
+      }
+      setTimeout(() => {
+        this.scrollParent = document.querySelector('.page-component__scroll > .el-scrollbar__wrap')
+        this.scrollParent && this.scrollParent.addEventListener('scroll', this.scrollHandler)
+        this.scrollHandler()
+      }, 200)
+    }
+  },
 
-    methods: {
-        scrollHandler() {
-            const { top, bottom } = this.$refs.meta.getBoundingClientRect()
-            this.fixedControl = bottom > document.documentElement.clientHeight &&
+  mounted() {
+    this.$nextTick(() => {
+      const highlight = this.$el.getElementsByClassName('highlight')[0]
+      if (this.$el.getElementsByClassName('description').length === 0) {
+        highlight.style.width = '100%'
+        highlight.borderRight = 'none'
+      }
+    })
+  },
+
+  beforeDestroy() {
+    this.removeScrollHandler()
+  },
+
+  methods: {
+    scrollHandler() {
+      const { top, bottom } = this.$refs.meta.getBoundingClientRect()
+      this.fixedControl = bottom > document.documentElement.clientHeight &&
           top + 44 <= document.documentElement.clientHeight
-        },
-
-        removeScrollHandler() {
-            this.scrollParent && this.scrollParent.removeEventListener('scroll', this.scrollHandler)
-        },
     },
+
+    removeScrollHandler() {
+      this.scrollParent && this.scrollParent.removeEventListener('scroll', this.scrollHandler)
+    }
+  }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
   .demo-block {
     border: solid 1px #ebebeb;
     border-radius: 3px;
@@ -266,5 +265,4 @@ export default {
     }
   }
 </style>
-
 

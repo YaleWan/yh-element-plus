@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :prop="col.prop" v-bind="col.formItem" class="schema-form-item">
+  <el-form-item :prop="col.prop" v-bind="col.formItem" class="c-form-item">
     <slot v-if="col.frontSlot" :name="col.frontSlot" />
     <component
       v-bind="col.attrs"
@@ -79,17 +79,3 @@ export default {
   }
 }
 </script>
-<style lang="css" scoped>
-  .el-date-editor{
-    width: 100%;
-  }
-  .el-date-editor .el-select{
-    width: 100%;
-  }
-  .el-date-editor .el-cascader{
-    width: 100%;
-  }
-  .el-date-editor.el-input{
-    width:100%;
-  }
-</style>

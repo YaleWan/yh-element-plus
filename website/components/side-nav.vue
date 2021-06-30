@@ -137,7 +137,7 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .side-nav {
   width: 100%;
   box-sizing: border-box;

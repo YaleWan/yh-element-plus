@@ -13,8 +13,3 @@ export default {
   props: {}
 }
 </script>
-<style>
-.abc{
-  bottom: 1px;
-}
-</style>
