@@ -1,6 +1,6 @@
 {
   "name": "c3-element-plus",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
@@ -47,7 +47,7 @@
     "dev": "vue-cli-service serve",
     "gen": "bash ./script/gc.sh",
     "build": "yarn clean:lib && yarn build:comp && yarn build:lib && yarn build:theme",
-    "build:comp":"node ./build/bincomp.js",
+    "build:comp": "node ./build/bincomp.js",
     "build:theme": "rimraf packages/theme-chalk/lib && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk && rimraf packages/theme-chalk/lib",
     "build:lib": "cross-env LIBMODE=core webpack --config ./build/webpack.config.js",
     "bootstrap": "yarn --frozen-lockfile && npx lerna bootstrap",
