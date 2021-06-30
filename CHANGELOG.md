@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/YaleWan/yh-element-plus/compare/v1.4.0...v1.4.1) (2021-06-30)
+
+
+### Features
+
+* 编写组件 ([5ca115a](https://github.com/YaleWan/yh-element-plus/commit/5ca115ae964a949b019d6e149330d405b5500a8c))
+
+
+
 # [1.4.0](https://github.com/YaleWan/yh-element-plus/compare/v1.3.1...v1.4.0) (2021-06-29)
 
 
