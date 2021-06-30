@@ -52,7 +52,7 @@
     "build:lib": "cross-env LIBMODE=core webpack --config ./build/webpack.config.js",
     "bootstrap": "yarn --frozen-lockfile && npx lerna bootstrap",
     "prepare": "husky install",
-    "release": "yarn build && bash ./script/release.sh",
+    "release": "yarn clean:lib && bash ./script/release.sh",
     "clean:lib": "rimraf lib",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
