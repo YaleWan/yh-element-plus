@@ -1,6 +1,6 @@
 {
   "name": "c3-element-plus",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
