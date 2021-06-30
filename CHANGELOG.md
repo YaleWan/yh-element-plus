@@ -1,3 +1,14 @@
+## [1.4.5](https://github.com/YaleWan/yh-element-plus/compare/v1.4.4...v1.4.5) (2021-06-30)
+
+
+### Features
+
+* 修改打包方式 ([de5ae95](https://github.com/YaleWan/yh-element-plus/commit/de5ae95223f62de47e80725b85c2762d48ed0ebf))
+* 增加代码规范 ([3c2863d](https://github.com/YaleWan/yh-element-plus/commit/3c2863d0e419905e91f4d69566d3f938efe7a911))
+* 编写table组件 ([fe5ca83](https://github.com/YaleWan/yh-element-plus/commit/fe5ca8300aad6838e54c9e95b9c829fc1406c294))
+
+
+
 ## [1.4.4](https://github.com/YaleWan/yh-element-plus/compare/v1.4.3...v1.4.4) (2021-06-30)
 
 
