@@ -49,6 +49,10 @@
           {
             "path": "/table",
             "title": "Table 表格"
+          },
+          {
+            "path": "/hello",
+            "title": "Hello 你好"
           }
         ]
       }

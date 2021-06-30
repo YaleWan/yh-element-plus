@@ -6,6 +6,7 @@ import CTag from '@c3-element-plus/tag'
 import CDatepicker from '@c3-element-plus/datepicker'
 import CForm from '@c3-element-plus/form'
 import CTable from '@c3-element-plus/table'
+import CHello from '@c3-element-plus/hello'
 
 const install = (app, opt) => {
   components.forEach(component => {
@@ -21,7 +22,8 @@ const components = [
   CSelect,
   CTag,
   CForm,
-  CTable
+  CTable,
+  CHello
 ]
 
 export {
@@ -33,6 +35,7 @@ export {
   CTag,
   CForm,
   CTable,
+  CHello,
   install
 }
 

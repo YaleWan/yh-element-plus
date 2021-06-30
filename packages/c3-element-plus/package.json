@@ -14,6 +14,7 @@
     "@c3-element-plus/tag": "^0.0.0",
     "@c3-element-plus/input": "^0.0.0",
     "@c3-element-plus/form": "^0.0.0",
-    "@c3-element-plus/table": "^0.0.0"
+    "@c3-element-plus/table": "^0.0.0",
+    "@c3-element-plus/hello": "^0.0.0"
   }
 }
