@@ -47,8 +47,8 @@
             "title": "Form 表单"
           },
           {
-            "path": "/test",
-            "title": "test"
+            "path": "/table",
+            "title": "Table 表格"
           }
         ]
       }
