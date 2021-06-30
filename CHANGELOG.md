@@ -1,3 +1,13 @@
+## [1.4.2](https://github.com/YaleWan/yh-element-plus/compare/v1.4.1...v1.4.2) (2021-06-30)
+
+
+### Features
+
+* 优化打包配置 ([33191ac](https://github.com/YaleWan/yh-element-plus/commit/33191ac4fb8103e7c25310063fd1381fce828c07))
+* 删除额外配置 ([3427fc8](https://github.com/YaleWan/yh-element-plus/commit/3427fc8b7113d01500c9197b5f16abaaf3f5794c))
+
+
+
 ## [1.4.1](https://github.com/YaleWan/yh-element-plus/compare/v1.4.0...v1.4.1) (2021-06-30)
 
 
