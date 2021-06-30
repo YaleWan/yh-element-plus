@@ -1,3 +1,12 @@
+## [1.4.3](https://github.com/YaleWan/yh-element-plus/compare/v1.4.2...v1.4.3) (2021-06-30)
+
+
+### Features
+
+* 删除额外的配置 ([d9f2171](https://github.com/YaleWan/yh-element-plus/commit/d9f217188b58652557abd1f2ddf6a8a3a3cee9d8))
+
+
+
 ## [1.4.2](https://github.com/YaleWan/yh-element-plus/compare/v1.4.1...v1.4.2) (2021-06-30)
 
 
