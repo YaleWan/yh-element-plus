@@ -32,10 +32,9 @@ const runBuild = async () => {
       input: path.resolve(__dirname, `../packages/${name.split('@c3-element-plus/')[1]}/index.js`),
       plugins: [
         nodeResolve(),
-        css(),
+        // css(),
         // terser(),
         vue({
-          target: 'browser',
           css: false,
         }),
       ],

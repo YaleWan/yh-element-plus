@@ -45,6 +45,10 @@
           {
             "path": "/form",
             "title": "Form 表单"
+          },
+          {
+            "path": "/test",
+            "title": "test"
           }
         ]
       }

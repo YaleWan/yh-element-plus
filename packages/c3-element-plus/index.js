@@ -1,6 +1,6 @@
 import CCheckbox from '@c3-element-plus/checkbox'
 import CInput from '@c3-element-plus/input'
-import CRadio from '@c3-element-plus/radio'
+import CRadio from '../radio'
 import CSelect from '@c3-element-plus/select'
 import CTag from '@c3-element-plus/tag'
 import CDatepicker from '@c3-element-plus/datepicker'

@@ -1,14 +1,14 @@
 
 .c-form-item {
-  .el-date-editor{
-    width: 100%;
-    .el-select,
+  .el-form-item__content{
+    .el-input,
     .el-cascader,
-    .el-input{
+    .el-select,
+    .el-date-editor{
       width: 100%;
     }
   }
-}
 
+}
 
 
