@@ -337,7 +337,6 @@
 </template>
 
 <script>
-import { isEqual } from 'lodash'
 export default {
   name: 'CTable',
   props: {
@@ -367,8 +366,6 @@ export default {
     rowClassName: { type: Function, default: null },
     // 单元格className的方法
     cellStyle: { type: Function, default: null },
-    // 设置默认选中行
-    defaultSelections: { type: [Array, Object], default: () => null },
     // 是否显示表格索引
     isIndex: { type: Boolean, default: false },
     // 是否显示表格是否折叠
@@ -389,31 +386,6 @@ export default {
     return {}
   },
   computed: {},
-  watch: {
-    defaultSelections(val) {
-      // console.log(val)
-      this.$nextTick(function() {
-        this.$refs.spTableCom.clearSelection()
-        if (Array.isArray(val)) {
-          this.tableData.forEach(row => {
-            val.forEach(sl => {
-              if (isEqual(row, sl)) {
-                this.$refs['spTableCom'].toggleRowSelection(
-                  row
-                )
-              }
-            })
-          })
-        } else {
-          this.tableData.forEach(row => {
-            if (isEqual(row, val)) {
-              this.$refs['spTableCom'].toggleRowSelection(row)
-            }
-          })
-        }
-      })
-    }
-  },
   methods: {
     // 表格勾选
     select(selection, row) {
@@ -454,19 +426,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.sp-table {
-     .paginationClass {
-        margin-top: 10px;
-        text-align: right;
-    }
-
-    .Status {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        margin-right: 5px;
-        border-radius: 50%;
-    }
-}
-</style>

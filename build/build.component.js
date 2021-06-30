@@ -7,7 +7,8 @@ const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const vue = require('rollup-plugin-vue')
 const rollup = require('rollup')
 const {terser} = require('rollup-plugin-terser')
-// const postcss = require('rollup-plugin-postcss')
+const commonjs = require('@rollup/plugin-commonjs')
+const json = require('@rollup/plugin-json')
 
 
 
@@ -31,9 +32,13 @@ const runBuild = async () => {
     const inputOptions = {
       input: path.resolve(__dirname, `../packages/${name.split('@c3-element-plus/')[1]}/index.js`),
       plugins: [
-        nodeResolve(),
+        nodeResolve({ jsnext: true, preferBuiltins: true, browser: true }),
         // css(),
         // terser(),
+        commonjs({
+          browser: true
+        }),
+        json(),
         vue({
           css: false,
         }),
