@@ -32,7 +32,8 @@
     "sass-loader": "^10",
     "standard-version": "^9.3.0",
     "vue-dotmd-loader": "^0.2.2",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "webpack-cli": "^4.7.2"
   },
   "workspaces": [
     "packages/*"
@@ -45,14 +46,16 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "gen": "bash ./script/gc.sh",
-    "build": "node ./build/bincomp.js",
+    "build": "yarn clean:lib && yarn build:comp && yarn build:lib && yarn build:theme",
+    "build:comp":"node ./build/bincomp.js",
+    "build:theme": "rimraf packages/theme-chalk/lib && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk && rimraf packages/theme-chalk/lib",
+    "build:lib": "cross-env LIBMODE=core webpack --config ./build/webpack.config.js",
     "bootstrap": "yarn --frozen-lockfile && npx lerna bootstrap && yarn gen:version",
     "gen:version": "node build/gen-version.js",
     "prepare": "husky install",
-    "release": "yarn clean:lib && bash ./script/release.sh",
+    "release": "yarn build && bash ./script/release.sh",
     "clean:lib": "rimraf lib",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "build:theme": "rimraf packages/theme-chalk/lib && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk && rimraf packages/theme-chalk/lib"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "element-ui": "2.12.0",

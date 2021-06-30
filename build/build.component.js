@@ -19,7 +19,8 @@ const runBuild = async () => {
   const inputs = pkgs
     .map(pkg => pkg.name)
     .filter(name =>
-      name.includes('@c3-element-plus') &&
+      name.includes('@c3-element-plus')&&
+      !name.includes('theme-chalk') &&
       !name.includes('utils'),
     ).slice(process.argv[2], process.argv[3])
 
