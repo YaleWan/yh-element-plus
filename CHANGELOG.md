@@ -1,3 +1,12 @@
+## [1.4.4](https://github.com/YaleWan/yh-element-plus/compare/v1.4.3...v1.4.4) (2021-06-30)
+
+
+### Features
+
+* 修改readme ([f46592f](https://github.com/YaleWan/yh-element-plus/commit/f46592f083a2c01dd984e90c3a9d9963e45d40c4))
+
+
+
 ## [1.4.3](https://github.com/YaleWan/yh-element-plus/compare/v1.4.2...v1.4.3) (2021-06-30)
 
 
